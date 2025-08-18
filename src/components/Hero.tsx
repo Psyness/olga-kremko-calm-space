@@ -28,7 +28,7 @@ const Hero = () => {
               </h1>
               
               <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-                Ваш личный психолог-консультант
+                Ваш личный психолог
               </h2>
               
               <p className="text-lg leading-relaxed max-w-2xl">
@@ -79,17 +79,6 @@ const Hero = () => {
                 Записаться на консультацию
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => {
-                  const element = document.querySelector('#about');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="border-primary/20 hover:bg-primary/5"
-              >
-                Узнать больше
-              </Button>
             </div>
           </div>
 

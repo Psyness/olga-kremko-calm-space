@@ -95,7 +95,7 @@ const Education = () => {
                         </div>
                       </div>
                       <Badge variant={getBadgeVariant(item.type)} className="text-xs">
-                        {item.year}
+                        {item.type === 'diploma' ? 'Диплом' : 'Сертификат'}
                       </Badge>
                     </div>
                   </CardContent>

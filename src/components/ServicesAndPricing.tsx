@@ -2,6 +2,9 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { User, Users, Gamepad2, Clock } from 'lucide-react';
+import individualTherapyImg from '@/assets/individual-therapy.jpg';
+import groupTherapyImg from '@/assets/group-therapy.jpg';
+import womensGameImg from '@/assets/womens-happiness-game.jpg';
 
 const ServicesAndPricing = () => {
   const services = [
@@ -11,7 +14,8 @@ const ServicesAndPricing = () => {
       duration: "50 минут",
       price: "60 BYN",
       description: "Персональная работа с депрессией, тревожностью, стрессом и проблемами в отношениях в безопасной атмосфере.",
-      color: "healing-green"
+      color: "healing-green",
+      image: individualTherapyImg
     },
     {
       icon: Users,
@@ -19,7 +23,8 @@ const ServicesAndPricing = () => {
       duration: "90 минут",
       price: "35 BYN",
       description: "Терапевтические группы для людей с похожими запросами. Поддержка единомышленников и обмен опытом.",
-      color: "primary"
+      color: "primary",
+      image: groupTherapyImg
     },
     {
       icon: Gamepad2,
@@ -27,7 +32,8 @@ const ServicesAndPricing = () => {
       duration: "3-4 часа",
       price: "80 BYN",
       description: "Авторская методика для женщин, желающих обрести внутреннюю гармонию и раскрыть свой потенциал.",
-      color: "trust-green"
+      color: "trust-green",
+      image: womensGameImg
     }
   ];
 
@@ -55,7 +61,16 @@ const ServicesAndPricing = () => {
           {/* Услуги */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
-              <Card key={index} className="trust-shadow border-0 hover:transform hover:-translate-y-1 smooth-transition">
+              <Card key={index} className="trust-shadow border-0 hover:transform hover:-translate-y-1 smooth-transition overflow-hidden">
+                {/* Изображение услуги */}
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between mb-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center ${

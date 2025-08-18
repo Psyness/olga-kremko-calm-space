@@ -52,13 +52,13 @@ const Header = () => {
 
           {/* Phone Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href="tel:+375291234567" 
-              className="flex items-center space-x-2 text-primary hover:text-trust-green smooth-transition"
-            >
-              <Phone size={16} />
-              <span className="text-sm font-medium">+375 (29) 123-45-67</span>
-            </a>
+              <a 
+                href="tel:+375259688144" 
+                className="flex items-center space-x-2 text-primary hover:text-trust-green smooth-transition"
+              >
+                <Phone size={16} />
+                <span className="text-sm font-medium">+375 25 968 8144</span>
+              </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -85,13 +85,13 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <a 
-                href="tel:+375291234567" 
-                className="flex items-center space-x-2 py-2 px-2 text-primary hover:bg-accent/20 rounded-md smooth-transition"
-              >
-                <Phone size={16} />
-                <span>+375 (29) 123-45-67</span>
-              </a>
+                <a 
+                  href="tel:+375259688144" 
+                  className="flex items-center space-x-2 py-2 px-2 text-primary hover:bg-accent/20 rounded-md smooth-transition"
+                >
+                  <Phone size={16} />
+                  <span>+375 25 968 8144</span>
+                </a>
             </nav>
           </div>
         )}
