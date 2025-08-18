@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Дополнительные цвета для сайта психолога
+				'healing-green': 'hsl(var(--healing-green))',
+				'soft-cream': 'hsl(var(--soft-cream))',
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'trust-green': 'hsl(var(--trust-green))',
+				'gentle-shadow': 'hsl(var(--gentle-shadow))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
