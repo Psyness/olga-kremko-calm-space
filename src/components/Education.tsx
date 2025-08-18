@@ -10,7 +10,6 @@ const Education = () => {
       icon: GraduationCap,
       title: "Высшее психологическое образование",
       institution: "Белорусский государственный университет",
-      year: "2018",
       description: "Факультет философии и социальных наук, специальность 'Психология'",
       type: "diploma"
     },
@@ -18,7 +17,6 @@ const Education = () => {
       icon: FileCheck,
       title: "Психологическое консультирование",
       institution: "Институт психологии и психотерапии",
-      year: "2019",
       description: "Сертификат специалиста по психологическому консультированию",
       type: "certificate"
     },
@@ -26,7 +24,6 @@ const Education = () => {
       icon: BookOpen,
       title: "Когнитивно-поведенческая терапия",
       institution: "Центр КПТ",
-      year: "2020",
       description: "Углубленный курс по методам когнитивно-поведенческой терапии",
       type: "certificate"
     },
@@ -34,7 +31,6 @@ const Education = () => {
       icon: Award,
       title: "Травматерапия",
       institution: "Международный институт травматерапии",
-      year: "2021",
       description: "Специализация в работе с травматическими переживаниями",
       type: "certificate"
     },
@@ -42,7 +38,6 @@ const Education = () => {
       icon: FileCheck,
       title: "Семейная психотерапия",
       institution: "Институт системной семейной терапии",
-      year: "2022",
       description: "Методы работы с семейными и парными отношениями",
       type: "certificate"
     },
@@ -50,7 +45,6 @@ const Education = () => {
       icon: BookOpen,
       title: "Групповая терапия",
       institution: "Центр групповой психотерапии",
-      year: "2023",
       description: "Сертификат ведущего групповой терапии и трансформационных игр",
       type: "certificate"
     }
@@ -71,7 +65,7 @@ const Education = () => {
           {/* Заголовок */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-medium mb-6 text-primary-foreground">
-              Образование и квалификация
+              Образование
             </h2>
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
               Непрерывное обучение и профессиональное развитие для качественной помощи
@@ -126,21 +120,6 @@ const Education = () => {
                 </CardContent>
               </Card>
 
-              {/* Дополнительная информация */}
-              <Card className="mt-6 border-0 trust-shadow bg-primary/10 backdrop-blur-sm">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-lg font-medium mb-2 text-white">
-                    Непрерывное развитие
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm">
-                    Регулярно прохожу супервизии и повышаю квалификацию, 
-                    чтобы предоставлять вам самую современную и эффективную помощь
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

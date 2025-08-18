@@ -10,30 +10,30 @@ const ServicesAndPricing = () => {
   const services = [
     {
       icon: User,
-      title: "Индивидуальная терапия",
-      duration: "50 минут",
-      price: "60 BYN",
-      description: "Персональная работа с депрессией, тревожностью, стрессом и проблемами в отношениях в безопасной атмосфере.",
+      title: "Личная консультация",
+      duration: "60-80 минут",
+      price: "100 руб",
+      description: "Онлайн или офлайн формат на ваш выбор. Продолжительность 60–80 минут.",
       color: "healing-green",
+      image: individualTherapyImg
+    },
+    {
+      icon: User,
+      title: "Абонемент на 4 сессии",
+      duration: "1 месяц",
+      price: "350 руб",
+      description: "Абонемент действует один месяц с момента покупки.",
+      color: "primary",
       image: individualTherapyImg
     },
     {
       icon: Users,
       title: "Групповая терапия",
-      duration: "90 минут",
-      price: "35 BYN",
-      description: "Терапевтические группы для людей с похожими запросами. Поддержка единомышленников и обмен опытом.",
-      color: "primary",
-      image: groupTherapyImg
-    },
-    {
-      icon: Gamepad2,
-      title: "Трансформационная игра «Женское счастье»",
-      duration: "3-4 часа",
-      price: "80 BYN",
-      description: "Авторская методика для женщин, желающих обрести внутреннюю гармонию и раскрыть свой потенциал.",
+      duration: "3 часа",
+      price: "100 руб / 350 руб абонемент",
+      description: "Групповая терапия один раз в неделю, продолжительность встречи — 3 часа.",
       color: "trust-green",
-      image: womensGameImg
+      image: groupTherapyImg
     }
   ];
 
@@ -54,7 +54,7 @@ const ServicesAndPricing = () => {
               Мои услуги
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Различные форматы работы с прозрачным ценообразованием для качественной помощи
+              Комфортный формат работы и доступные цены
             </p>
           </div>
 

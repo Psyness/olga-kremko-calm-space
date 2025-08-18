@@ -38,14 +38,13 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Shield className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">Безопасность</div>
-                  <div className="text-sm text-muted-foreground">Доверительная атмосфера</div>
+                  <div className="font-medium text-foreground">🔸 Безопасность и принятие — с теплом и без осуждения</div>
                 </div>
               </div>
               
@@ -54,8 +53,7 @@ const Hero = () => {
                   <Heart className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">Принятие</div>
-                  <div className="text-sm text-muted-foreground">Без осуждения</div>
+                  <div className="font-medium text-foreground">🔸 Конфиденциальность — соблюдение врачебной тайны</div>
                 </div>
               </div>
               
@@ -64,8 +62,7 @@ const Hero = () => {
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">Поддержка</div>
-                  <div className="text-sm text-muted-foreground">Индивидуальный подход</div>
+                  <div className="font-medium text-foreground">🔸 Онлайн и очно — удобный формат работы на выбор</div>
                 </div>
               </div>
             </div>

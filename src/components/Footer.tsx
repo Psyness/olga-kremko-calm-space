@@ -23,17 +23,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Phone,
-      href: "tel:+375291234567",
+      href: "tel:+375259688144",
       label: "Телефон"
     },
     {
       icon: MessageCircle,
-      href: "https://t.me/olga_kremko_psy",
+      href: "https://t.me/kremko_olga",
       label: "Telegram"
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/olga.kremko.psychologist",
+      href: "https://instagram.com/olga_kremko",
       label: "Instagram"
     },
     {
@@ -61,7 +61,7 @@ const Footer = () => {
               <h3 className="text-xl font-medium">Кремко Ольга</h3>
             </div>
             <p className="text-background/80 leading-relaxed mb-6 max-w-md">
-              Психолог-консультант с сердечным подходом к каждому клиенту. 
+              Психолог с сердечным подходом к каждому клиенту. 
               Создаю безопасное пространство для исцеления и личностного роста.
             </p>
             <div className="text-sm text-background/70">
@@ -95,11 +95,11 @@ const Footer = () => {
             <h4 className="font-medium mb-4">Связаться со мной</h4>
             <div className="space-y-3">
               <a 
-                href="tel:+375291234567" 
+                href="tel:+375259688144" 
                 className="flex items-center space-x-2 text-background/80 hover:text-primary smooth-transition text-sm"
               >
                 <Phone size={16} />
-                <span>+375 (29) 123-45-67</span>
+                <span>+375 25 968 8144</span>
               </a>
               <div className="flex space-x-3 pt-2">
                 {socialLinks.slice(1).map((social, index) => (
@@ -124,10 +124,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Копирайт */}
             <div className="text-sm text-background/70 text-center md:text-left">
-              <p>© {currentYear} Кремко Ольга. Все права защищены.</p>
-              <p className="mt-1">
-                Психологические консультации | Минск, Беларусь
-              </p>
+              <p>2025 Ольга Кремко. Все права защищены. Психологические консультации. Минск, Беларусь.</p>
             </div>
 
             {/* Кнопка наверх */}
@@ -143,16 +140,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Дополнительная информация */}
-        <div className="mt-8 pt-6 border-t border-background/10">
-          <div className="text-center">
-            <p className="text-xs text-background/60 leading-relaxed">
-              Данный сайт не является офертой. Вся информация носит ознакомительный характер.
-              <br />
-              Психологическая помощь не заменяет медицинское лечение при необходимости.
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   );
