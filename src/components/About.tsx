@@ -1,30 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Award, Clock, Heart, Users } from 'lucide-react';
 
 const About = () => {
-  const stats = [
-    {
-      icon: Clock,
-      number: "5+",
-      label: "лет опыта",
-    },
-    {
-      icon: Users,
-      number: "200+",
-      label: "клиентов",
-    },
-    {
-      icon: Heart,
-      number: "95%",
-      label: "положительных отзывов",
-    },
-    {
-      icon: Award,
-      number: "10+",
-      label: "сертификатов",
-    },
-  ];
 
   return (
     <section id="about" className="py-20 bg-background">
@@ -69,24 +46,6 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Статистика */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <Card key={index} className="text-center trust-shadow border-0">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      <stat.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="text-2xl font-bold text-foreground mb-1">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
 
           {/* Философия работы */}

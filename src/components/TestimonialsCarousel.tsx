@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Quote, Heart } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Star, Quote, Heart, ChevronLeft, ChevronRight, Upload } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 
-const Testimonials = () => {
+const TestimonialsCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [uploadedImages, setUploadedImages] = useState<string[]>([]);
+
   const testimonials = [
     {
       name: "Анна К.",
@@ -24,29 +29,30 @@ const Testimonials = () => {
       issue: "Эмоциональное выгорание",
       text: "Профессиональное выгорание довело меня до депрессии. Ольга не только помогла мне справиться с этим состоянием, но и научила техникам самопомощи. Ее поддержка и профессионализм были неоценимы в тот трудный период моей жизни.",
       rating: 5
-    },
-    {
-      name: "Виктория Л.",
-      age: "41 год",
-      issue: "Трансформационная игра 'Женское счастье'",
-      text: "Игра 'Женское счастье' стала для меня настоящим открытием. За несколько часов я смогла проработать глубокие блоки и получить ответы на вопросы, которые мучили меня годами. Ольга мастерски ведет процесс, создавая безопасное пространство для трансформации.",
-      rating: 5
-    },
-    {
-      name: "Светлана М.",
-      age: "29 лет",
-      issue: "Низкая самооценка",
-      text: "Я всегда считала себя 'не достаточно хорошей'. Работа с Ольгой помогла мне увидеть свою ценность и научиться любить себя. Ее теплота и принятие стали основой для моего внутреннего исцеления. Рекомендую всем, кто борется с самоприятием.",
-      rating: 5
-    },
-    {
-      name: "Ирина Б.",
-      age: "38 лет",
-      issue: "Групповая терапия",
-      text: "Групповые сессии с Ольгой показали мне, что я не одинока в своих переживаниях. Поддержка группы и мудрое руководство Ольги помогли мне не только проработать свои проблемы, но и научиться поддерживать других. Это был очень ценный опыт роста.",
-      rating: 5
     }
   ];
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      const newImages: string[] = [];
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          if (e.target?.result) {
+            newImages.push(e.target.result as string);
+            if (newImages.length === files.length) {
+              setUploadedImages(prev => [...prev, ...newImages]);
+            }
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+  };
+
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
 
   const renderStars = (rating: number) => {
     return (
@@ -80,8 +86,82 @@ const Testimonials = () => {
             </p>
           </div>
 
+          {/* Загрузка скринов отзывов */}
+          <div className="mb-12">
+            <Card className="trust-shadow border-0">
+              <CardContent className="p-6 text-center">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <h3 className="text-lg font-medium mb-3">
+                  Скрины реальных отзывов
+                </h3>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  Загрузите фотографии отзывов и переписок с клиентами
+                </p>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                  id="testimonial-upload"
+                />
+                <label htmlFor="testimonial-upload">
+                  <Button variant="outline" className="cursor-pointer">
+                    Добавить изображения
+                  </Button>
+                </label>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Карусель загруженных изображений */}
+          {uploadedImages.length > 0 && (
+            <div className="mb-12">
+              <div className="relative">
+                <div className="overflow-hidden" ref={emblaRef}>
+                  <div className="flex">
+                    {uploadedImages.map((image, index) => (
+                      <div key={index} className="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
+                        <Card className="trust-shadow border-0">
+                          <CardContent className="p-4">
+                            <img
+                              src={image}
+                              alt={`Отзыв ${index + 1}`}
+                              className="w-full h-64 object-cover rounded-lg"
+                            />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {uploadedImages.length > 1 && (
+                  <>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-background/80 backdrop-blur-sm"
+                      onClick={scrollPrev}
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-background/80 backdrop-blur-sm"
+                      onClick={scrollNext}
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Отзывы */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
@@ -124,62 +204,10 @@ const Testimonials = () => {
               </Card>
             ))}
           </div>
-
-          {/* Статистика */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center trust-shadow border-0">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                <div className="text-sm text-muted-foreground">
-                  положительных отзывов
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center trust-shadow border-0">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">200+</div>
-                <div className="text-sm text-muted-foreground">
-                  помогли клиентам
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center trust-shadow border-0">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">5</div>
-                <div className="text-sm text-muted-foreground">
-                  лет практики
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center trust-shadow border-0">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">
-                  поддержка
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Призыв к действию */}
-          <Card className="healing-gradient border-0 text-center">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-medium mb-4 text-primary-foreground">
-                Станьте следующим, кто изменит свою жизнь
-              </h3>
-              <p className="text-primary-foreground/90 mb-6 max-w-2xl mx-auto">
-                Каждая история успеха начинается с первого шага. Позвольте мне 
-                стать вашим проводником на пути к внутренней гармонии и благополучию.
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
   );
 };
 
-export default Testimonials;
+export default TestimonialsCarousel;

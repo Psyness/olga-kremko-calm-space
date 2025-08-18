@@ -18,78 +18,63 @@ const Issues = () => {
   const issues = [
     {
       icon: Brain,
-      title: "Депрессия, тревожность, панические атаки",
-      description: "Помогу справиться с подавленным настроением, навязчивыми тревогами и паническими состояниями"
+      title: "Депрессия, тревожность, панические атаки"
     },
     {
       icon: Zap,
-      title: "Эмоциональное выгорание",
-      description: "Восстановление после профессионального и личностного истощения"
+      title: "Эмоциональное выгорание"
     },
     {
       icon: Clock,
-      title: "Хроническая усталость, апатия, астения",
-      description: "Работа с постоянным чувством усталости и потерей жизненных сил"
+      title: "Хроническая усталость, апатия, астения"
     },
     {
       icon: AlertCircle,
-      title: "Резкие смены настроения, плаксивость, агрессия",
-      description: "Стабилизация эмоционального состояния и развитие навыков саморегуляции"
+      title: "Резкие смены настроения, плаксивость, агрессия"
     },
     {
       icon: Heart,
-      title: "Длительный или острый стресс",
-      description: "Обучение техникам управления стрессом и восстановления внутреннего равновесия"
+      title: "Длительный или острый стресс"
     },
     {
       icon: Shield,
-      title: "Проблемы с самооценкой и уверенностью",
-      description: "Повышение самоценности и развитие здоровой уверенности в себе"
+      title: "Проблемы с самооценкой и уверенностью"
     },
     {
       icon: Target,
-      title: "Ощущение, что живете не своей жизнью",
-      description: "Поиск истинных желаний, ценностей и жизненного пути"
+      title: "Ощущение, что живете не своей жизнью"
     },
     {
       icon: Users,
-      title: "Проблемы в отношениях",
-      description: "Улучшение взаимодействия с близкими, коллегами, партнерами"
+      title: "Проблемы в отношениях"
     },
     {
       icon: Heart,
-      title: "Сложности в романтических отношениях",
-      description: "Работа с парными конфликтами, созависимостью, поиском партнера"
+      title: "Сложности в романтических отношениях"
     },
     {
       icon: Shield,
-      title: "Неумение защищать границы и говорить 'нет'",
-      description: "Развитие ассертивности и здоровых личных границ"
+      title: "Неумение защищать границы и говорить 'нет'"
     },
     {
       icon: Lightbulb,
-      title: "Сложности с пониманием чувств",
-      description: "Развитие эмоционального интеллекта и способности к рефлексии"
+      title: "Сложности с пониманием чувств"
     },
     {
       icon: Clock,
-      title: "Синдром отложенной жизни",
-      description: "Обучение навыкам присутствия в моменте и наслаждения жизнью"
+      title: "Синдром отложенной жизни"
     },
     {
       icon: AlertCircle,
-      title: "Синдром жертвы",
-      description: "Переход от позиции жертвы к активной жизненной позиции"
+      title: "Синдром жертвы"
     },
     {
       icon: Smile,
-      title: "Отсутствие ощущения счастья",
-      description: "Поиск источников радости и смысла в жизни"
+      title: "Отсутствие ощущения счастья"
     },
     {
       icon: Brain,
-      title: "Желание лучше понимать себя и других",
-      description: "Развитие самосознания и эмпатии в отношениях"
+      title: "Желание лучше понимать себя и других"
     }
   ];
 
@@ -116,28 +101,14 @@ const Issues = () => {
           </div>
 
           {/* Список запросов */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
             {issues.map((issue, index) => (
-              <Card 
-                key={index} 
-                className="trust-shadow border-0 hover:transform hover:-translate-y-1 smooth-transition group"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 smooth-transition">
-                      <issue.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-medium text-foreground mb-2 leading-tight">
-                        {issue.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {issue.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="flex items-center space-x-3 p-3 bg-card rounded-lg border">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <issue.icon className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-sm text-foreground">{issue.title}</span>
+              </div>
             ))}
           </div>
 

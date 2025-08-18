@@ -1,47 +1,32 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { User, Users, Gamepad2, Clock, Heart, Shield } from 'lucide-react';
+import { User, Users, Gamepad2, Clock } from 'lucide-react';
 
-const Services = () => {
+const ServicesAndPricing = () => {
   const services = [
     {
       icon: User,
       title: "Индивидуальная терапия",
       duration: "50 минут",
-      description: "Персональная работа с депрессией, тревожностью, стрессом и проблемами в отношениях. Создаем безопасное пространство для глубокой работы с вашими переживаниями.",
-      benefits: [
-        "Конфиденциальность и безопасность",
-        "Индивидуальный подход к вашим потребностям",
-        "Работа в комфортном для вас темпе",
-        "Глубокое понимание ваших особенностей"
-      ],
+      price: "60 BYN",
+      description: "Персональная работа с депрессией, тревожностью, стрессом и проблемами в отношениях в безопасной атмосфере.",
       color: "healing-green"
     },
     {
       icon: Users,
       title: "Групповая терапия",
       duration: "90 минут",
-      description: "Терапевтические группы для людей с похожими запросами. Поддержка единомышленников и возможность учиться на опыте других участников.",
-      benefits: [
-        "Поддержка группы единомышленников",
-        "Осознание, что вы не одиноки в своих переживаниях",
-        "Возможность получить обратную связь",
-        "Развитие навыков общения"
-      ],
+      price: "35 BYN",
+      description: "Терапевтические группы для людей с похожими запросами. Поддержка единомышленников и обмен опытом.",
       color: "primary"
     },
     {
       icon: Gamepad2,
       title: "Трансформационная игра «Женское счастье»",
       duration: "3-4 часа",
-      description: "Уникальная авторская методика для женщин, желающих обрести внутреннюю гармонию, раскрыть свой потенциал и найти путь к истинному счастью.",
-      benefits: [
-        "Раскрытие женского потенциала",
-        "Работа с самооценкой и уверенностью",
-        "Поиск баланса в различных сферах жизни",
-        "Исцеление женских травм и комплексов"
-      ],
+      price: "80 BYN",
+      description: "Авторская методика для женщин, желающих обрести внутреннюю гармонию и раскрыть свой потенциал.",
       color: "trust-green"
     }
   ];
@@ -63,7 +48,7 @@ const Services = () => {
               Мои услуги
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Различные форматы работы для максимально эффективной помощи именно вам
+              Различные форматы работы с прозрачным ценообразованием для качественной помощи
             </p>
           </div>
 
@@ -93,27 +78,21 @@ const Services = () => {
                       <span className="text-xs">{service.duration}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                  <div className="text-2xl font-bold text-primary">{service.price}</div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
                   </p>
                   
-                  <div className="space-y-3">
-                    <h4 className="font-medium text-foreground flex items-center">
-                      <Heart size={16} className="mr-2 text-primary" />
-                      Преимущества:
-                    </h4>
-                    <ul className="space-y-2">
-                      {service.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start text-sm text-muted-foreground">
-                          <Shield size={12} className="mr-2 mt-1 text-primary flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <Button 
+                    onClick={scrollToContact}
+                    className="w-full"
+                    variant="outline"
+                  >
+                    Записаться
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -145,4 +124,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesAndPricing;
