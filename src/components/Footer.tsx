@@ -53,91 +53,11 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Основная информация */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Heart className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-medium">Кремко Ольга</h3>
-            </div>
-            <p className="text-background/80 leading-relaxed mb-6 max-w-md">
-              Психолог с сердечным подходом к каждому клиенту. 
-              Создаю безопасное пространство для исцеления и личностного роста.
-            </p>
-            <div className="text-sm text-background/70">
-              <p className="mb-2">
-                <strong>Девиз:</strong> "Психолог работает сердцем"
-              </p>
-              <p>
-                Помогаю людям обрести внутреннюю гармонию и построить здоровые отношения с собой и окружающими.
-              </p>
-            </div>
-          </div>
-
-          {/* Навигация */}
-          <div>
-            <h4 className="font-medium mb-4">Навигация</h4>
-            <nav className="space-y-2">
-              {menuItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block text-background/80 hover:text-primary smooth-transition text-sm"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-          </div>
-
-          {/* Контакты */}
-          <div>
-            <h4 className="font-medium mb-4">Связаться со мной</h4>
-            <div className="space-y-3">
-              <a 
-                href="tel:+375259688144" 
-                className="flex items-center space-x-2 text-background/80 hover:text-primary smooth-transition text-sm"
-              >
-                <Phone size={16} />
-                <span>+375 25 968 8144</span>
-              </a>
-              <div className="flex space-x-3 pt-2">
-                {socialLinks.slice(1).map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-background/10 hover:bg-primary/20 flex items-center justify-center smooth-transition"
-                    aria-label={social.label}
-                  >
-                    <social.icon size={16} className="text-background hover:text-primary" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Разделитель */}
-        <div className="border-t border-background/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Копирайт */}
-            <div className="text-sm text-background/70 text-center md:text-left">
-              <p>2025 Ольга Кремко. Все права защищены. Психологические консультации. Минск, Беларусь.</p>
-            </div>
-
-            {/* Кнопка наверх */}
-            <Button
-              onClick={scrollToTop}
-              variant="ghost"
-              size="sm"
-              className="text-background/80 hover:text-primary hover:bg-background/10"
-            >
-              <ArrowUp size={16} className="mr-2" />
-              Наверх
-            </Button>
-          </div>
+        {/* Копирайт */}
+        <div className="text-center">
+          <p className="text-sm text-background/70">
+            2025 Ольга Кремко. Все права защищены. Психологические консультации | Минск, Беларусь.
+          </p>
         </div>
 
       </div>

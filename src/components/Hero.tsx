@@ -38,33 +38,14 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="font-medium text-foreground">🔸 Безопасность и принятие — с теплом и без осуждения</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="font-medium text-foreground">🔸 Конфиденциальность — соблюдение врачебной тайны</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="font-medium text-foreground">🔸 Онлайн и очно — удобный формат работы на выбор</div>
-                </div>
-              </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-medium mb-4">Безопасность, поддержка и принятие</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                В нашей работе главное — создать атмосферу полного доверия и понимания. 
+                Здесь вы можете быть собой, говорить о самом важном и получать поддержку 
+                без осуждения. Каждая сессия проходит в конфиденциальной обстановке, 
+                где ваши чувства и переживания принимаются с уважением и заботой.
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">

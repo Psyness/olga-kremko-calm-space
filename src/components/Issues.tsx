@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const Issues = () => {
   return (
-    <section id="issues" className="py-20 bg-background">
+    <section id="issues" className="py-20 soft-gradient">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Заголовок */}
