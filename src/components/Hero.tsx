@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Shield, Users } from 'lucide-react';
+import { Heart, Shield, Lock, Monitor } from 'lucide-react';
 import olgaPhoto from '@/assets/olga-kremko-photo.jpg';
 
 const Hero = () => {
@@ -38,14 +38,36 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="space-y-3">
-              <h3 className="text-xl font-medium mb-4">Безопасность, поддержка и принятие</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                В нашей работе главное — создать атмосферу полного доверия и понимания. 
-                Здесь вы можете быть собой, говорить о самом важном и получать поддержку 
-                без осуждения. Каждая сессия проходит в конфиденциальной обстановке, 
-                где ваши чувства и переживания принимаются с уважением и заботой.
-              </p>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                  <Shield size={20} className="text-primary" />
+                </div>
+                <div>
+                  <div className="font-medium text-foreground">Безопасность</div>
+                  <div className="text-sm text-muted-foreground">без осуждения</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                  <Lock size={20} className="text-primary" />
+                </div>
+                <div>
+                  <div className="font-medium text-foreground">Конфиденциальность</div>
+                  <div className="text-sm text-muted-foreground">сохранение врачебной тайны</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                  <Monitor size={20} className="text-primary" />
+                </div>
+                <div>
+                  <div className="font-medium text-foreground">Онлайн и очно</div>
+                  <div className="text-sm text-muted-foreground">удобный формат на выбор</div>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
