@@ -16,24 +16,24 @@ const Issues = () => {
           {/* Запросы - компактный список */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="space-y-3">
-              <p className="text-muted-foreground">• Депрессия, повышенная тревожность, панические атаки</p>
-              <p className="text-muted-foreground">• Эмоциональное выгорание</p>
-              <p className="text-muted-foreground">• Хроническая усталость, апатия, астения</p>
-              <p className="text-muted-foreground">• Резкие смены настроения, плаксивость, повышенная агрессия</p>
-              <p className="text-muted-foreground">• Длительный или острый стресс</p>
+              <p className="text-muted-foreground">• Депрессия, повышенная тревожность, панические атаки, внутреннее напряжение</p>
+              <p className="text-muted-foreground">• Одиночество, нехватка близости и поддержки</p>
+              <p className="text-muted-foreground">• Эмоциональное выгорание, хроническая усталость, апатия, негативные мысли</p>
+              <p className="text-muted-foreground">• Частые смены настроения, плаксивость, повышенная агрессия</p>
+              <p className="text-muted-foreground">• Длительный или острый стресс, переживание сложных жизненных ситуаций</p>
             </div>
             <div className="space-y-3">
-              <p className="text-muted-foreground">• Проблемы с самооценкой и уверенностью в себе</p>
-              <p className="text-muted-foreground">• Ощущение, что живете не той жизнью, которую хотите</p>
-              <p className="text-muted-foreground">• Проблемы в отношениях с близкими людьми, коллегами, начальством</p>
+              <p className="text-muted-foreground">• Неуверенность в себе, заниженная самооценка</p>
+              <p className="text-muted-foreground">• Мысль, что живете не той жизнью, которую хотите, отсутствие ощущения счастья </p>
+              <p className="text-muted-foreground">• Трудности в отношениях с близкими людьми, родителями, коллегами, начальством</p>
               <p className="text-muted-foreground">• Проблемы в отношениях с партнером</p>
               <p className="text-muted-foreground">• Неумение защищать свои границы и говорить «нет»</p>
             </div>
             <div className="space-y-3">
-              <p className="text-muted-foreground">• Сложности с пониманием чувств</p>
-              <p className="text-muted-foreground">• Синдром отложенной жизни</p>
-              <p className="text-muted-foreground">• Синдром жертвы</p>
-              <p className="text-muted-foreground">• Отсутствие ощущения счастья</p>
+              <p className="text-muted-foreground">• Работа с обидами, чувством вины и стыда</p>
+              <p className="text-muted-foreground">• Синдром отложенной жизни, неумение наслаждаться моментом здесь и сейчас</p>
+              <p className="text-muted-foreground">• Повторяющиеся сценарии в жизни и отношениях</p>
+              <p className="text-muted-foreground">• Трудности в принятии решений</p>
               <p className="text-muted-foreground">• Желание лучше понимать себя и других</p>
               <p className="text-muted-foreground">• А также другие темы по индивидуальному запросу</p>
             </div>

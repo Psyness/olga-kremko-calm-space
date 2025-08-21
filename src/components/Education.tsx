@@ -9,42 +9,42 @@ const Education = () => {
     {
       icon: GraduationCap,
       title: "Высшее психологическое образование",
-      institution: "Белорусский государственный университет",
+      institution: "МФПУ \"Синергия\" Квалификация \"Психолог\" ",
       description: "Факультет философии и социальных наук, специальность 'Психология'",
       type: "diploma"
     },
     {
-      icon: FileCheck,
+      icon: GraduationCap,
       title: "Психологическое консультирование",
-      institution: "Институт психологии и психотерапии",
+      institution: "Столичный институт профессионального образования",
       description: "Сертификат специалиста по психологическому консультированию",
-      type: "certificate"
+      type: "diploma"
     },
     {
       icon: BookOpen,
       title: "Когнитивно-поведенческая терапия",
-      institution: "Центр КПТ",
+      institution: "Высшая Школа \"Среда Обучения\"",
       description: "Углубленный курс по методам когнитивно-поведенческой терапии",
       type: "certificate"
     },
     {
       icon: Award,
-      title: "Травматерапия",
-      institution: "Международный институт травматерапии",
+      title: "1 ступень Гештальт-терапии",
+      institution: "Московский Гештальт Институт",
       description: "Специализация в работе с травматическими переживаниями",
       type: "certificate"
     },
     {
       icon: FileCheck,
       title: "Семейная психотерапия",
-      institution: "Институт системной семейной терапии",
+      institution: "СПбШТ Федеральный образовательный проект",
       description: "Методы работы с семейными и парными отношениями",
       type: "certificate"
     },
     {
       icon: BookOpen,
-      title: "Групповая терапия",
-      institution: "Центр групповой психотерапии",
+      title: "Психология отношений",
+      institution: "СПбШТ Федеральный образовательный проект",
       description: "Сертификат ведущего групповой терапии и трансформационных игр",
       type: "certificate"
     }
@@ -67,9 +67,7 @@ const Education = () => {
             <h2 className="text-3xl md:text-4xl font-medium mb-6 text-primary-foreground">
               Образование
             </h2>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-              Непрерывное обучение и профессиональное развитие для качественной помощи
-            </p>
+
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 items-start">
@@ -109,12 +107,11 @@ const Education = () => {
                     />
                   </div>
                   <div className="text-center">
-                    <h3 className="text-lg font-medium mb-2 text-white">
+                    <h3 className="text-lg font-medium mb-2">
                       Документы об образовании
                     </h3>
-                    <p className="text-primary-foreground/80 text-sm">
-                      Все дипломы и сертификаты подтверждают высокую квалификацию 
-                      и право на ведение психологической практики
+                    <p className="text-primary text-sm">
+                      Все дипломы и сертификаты подтверждают право на ведение психологической практики
                     </p>
                   </div>
                 </CardContent>

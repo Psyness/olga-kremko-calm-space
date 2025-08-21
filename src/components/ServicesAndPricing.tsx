@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { User, Users, Gamepad2, Clock } from 'lucide-react';
@@ -7,13 +7,18 @@ import groupTherapyImg from '@/assets/group-therapy.jpg';
 import womensGameImg from '@/assets/womens-happiness-game.jpg';
 
 const ServicesAndPricing = () => {
+  const [visibleServices, setVisibleServices] = useState<Record<string, boolean>>({});
   const services = [
     {
       icon: User,
       title: "Личная консультация",
       duration: "60-80 минут",
       price: "100 руб",
-      description: "Онлайн или офлайн формат на ваш выбор. Продолжительность 60–80 минут.",
+      description: "Формат работы — онлайн и офлайн. Продолжительность 60–80 минут. Даты и время согласуются индивидуально.",
+      fullDescription: "Личная консультация проходит онлайн — на платформе Google Meet (или другой по договоренности)," +
+        " а также офлайн в уютном кабинете. Встреча длится 60 минут, но при необходимости может быть продлена " +
+        "до 80 минут без доплат. Вы можете выбрать регулярный график встреч или приходить точечно — " +
+        "в этом случае я предложу вам свободные окошки на ближайшую неделю.",
       color: "healing-green",
       image: individualTherapyImg
     },
@@ -22,16 +27,25 @@ const ServicesAndPricing = () => {
       title: "Абонемент на 4 сессии",
       duration: "1 месяц",
       price: "350 руб",
-      description: "Абонемент действует один месяц с момента покупки.",
+      description: "Абонемент на 4 личные консультации. Действует один месяц с момента покупки.",
+      fullDescription: "Абонемент на месяц дает возможность регулярно посещать психолога и выстраивать " +
+        "последовательный процесс работы. Такой формат особенно эффективен, потому что регулярные встречи" +
+        " помогают глубже прорабатывать запросы, видеть динамику изменений и получать более стойкие результаты.",
       color: "primary",
       image: individualTherapyImg
     },
     {
       icon: Users,
-      title: "Групповая терапия",
+      title: "Групповые встречи",
       duration: "3 часа",
-      price: "350 руб — абонемент на месяц",
-      description: "Раз в неделю мы собираемся в уютной и безопасной атмосфере, где каждый может быть услышан и принят. Это пространство, где вы сможете снизить уровень тревоги, проработать самооценку, найти опору и поддержку. Продолжительность встречи — 3 часа.",
+      price: "350 руб (за месяц)",
+      description: "Мы встречаемся по вторникам с 18:00 до 21:00\n" +
+        "В уютном кабинете в формате живого общения",
+      fullDescription: "Групповая терапия — это формат, где 6–10 участников вместе с психологом работают " +
+        "над своими запросами в безопасной и поддерживающей атмосфере. Здесь вы можете делиться опытом, " +
+        "лучше понимать себя через общение с другими и находить новые способы решения трудностей. " +
+        "В группе каждый участник имеет возможность быть услышанным и принятым. " +
+        "Это время для снижения тревожности, укрепления самооценки, поиска опоры и поддержки. ",
       color: "trust-green",
       image: groupTherapyImg
     },
@@ -40,11 +54,41 @@ const ServicesAndPricing = () => {
       title: "Женский круг",
       duration: "3-4 часа",
       price: "100 руб",
-      description: "Теплые тематические встречи в кругу женщин, где можно быть собой. Каждая встреча — это особенное пространство, наполненное поддержкой и искренними разговорами. В зависимости от темы мы можем использовать МАК-карты, практиковать медитации и дыхательные техники, делиться мыслями и переживаниями, устраивать чаепития. Это больше, чем просто девичник. Это время для себя — для восстановления, вдохновения и перезагрузки.",
+      description: "Встречи в кругу женщин, где можно быть собой. График уточняйте по телефону или в Instagram." ,
+      fullDescription: "Мы собираемся в уютной атмосфере, пьем чай, знакомимся и создаем теплое дружеское пространство," +
+        " где каждая девушка может чувствовать себя комфортно. В зависимости от темы встречи мы используем МАК-карты, " +
+        "практикуем медитации и дыхательные техники, рисуем мандалы, делимся мыслями и переживаниями. Это больше, " +
+        "чем просто девичник — это время для себя, для восстановления и перезагрузки.",
+      color: "healing-green",
+      image: womensGameImg
+    },
+     {
+      icon: Gamepad2,
+      title: "Трансформационная игра \"Женское счастье\"",
+      duration: "3-4 часа",
+      price: "150 руб",
+      description: "Игровая практика проходит в уютном кабинете.\n" +
+        "Записаться и уточнить даты можно по телефону или в Instagram.",
+      fullDescription: "На этой игре вы ответите на вопросы: \"Что мешает мне быть счастливой?\" " +
+        "и \"Как я могу изменить свою жизнь к лучшему?\"" +
+        " Глубокая игра которая поможет освободиться от страхов, чувства вины, ощутить поддержку в " +
+        "теплой женской компании." +
+        " (до 4 участниц)",
       color: "healing-green",
       image: womensGameImg
     }
   ];
+
+  const toggleVisible = (title: string) => {
+    if (visibleServices[title]) {
+      const visibleKeys = Object.keys(visibleServices)
+        .filter(key => key !== title)
+        .filter(key => visibleServices[key])
+      setVisibleServices(visibleKeys.reduce((acc, key) => ({ ...acc, [key]: true }), {}))
+    } else {
+      setVisibleServices({...visibleServices, [title]: true})
+    }
+  }
 
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
@@ -108,6 +152,10 @@ const ServicesAndPricing = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
+                    <div>
+                    {visibleServices[service.title] && ` ${service.fullDescription}`}
+                    </div>
+                    <div className="cursor-pointer text-primary underline underline-offset-2" onClick={() => toggleVisible(service.title)}>{visibleServices[service.title] ? 'Скрыть' : 'Подробнее'}</div>
                   </p>
                   
                   <Button 
@@ -129,7 +177,7 @@ const ServicesAndPricing = () => {
                 Готовы начать путь к изменениям?
               </h3>
               <p className="text-primary-foreground/90 mb-6 text-lg max-w-2xl mx-auto">
-                Каждый путь исцеления начинается с первого шага. Я буду рядом, 
+                Я буду рядом,
                 чтобы поддержать вас на этом важном пути к внутренней гармонии и благополучию.
               </p>
               <Button 

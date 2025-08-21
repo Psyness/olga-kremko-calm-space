@@ -8,8 +8,7 @@ const Header = () => {
   const menuItems = [
     { href: '#about', label: 'Обо мне' },
     { href: '#education', label: 'Образование' },
-    { href: '#services', label: 'Услуги' },
-    { href: '#pricing', label: 'Стоимость' },
+    { href: '#services', label: 'Стоимость' },
     { href: '#issues', label: 'Запросы' },
     { href: '#testimonials', label: 'Отзывы' },
     { href: '#faq', label: 'Вопросы' },
