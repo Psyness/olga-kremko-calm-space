@@ -107,7 +107,7 @@ const ServicesAndPricing = () => {
               Мои услуги
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Комфортный формат работы и доступные цены
+              Стоимость услуг и формат работы
             </p>
           </div>
 
