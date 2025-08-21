@@ -8,6 +8,7 @@ import Issues from '@/components/Issues';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
+import Map from '@/components/Map';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
         <TestimonialsSlider />
         <FAQ />
         <Contact />
+        <Map />
       </main>
       <Footer />
     </div>
