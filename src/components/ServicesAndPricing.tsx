@@ -5,6 +5,7 @@ import { User, Users, Gamepad2, Clock } from 'lucide-react';
 import individualTherapyImg from '@/assets/individual-therapy.jpg';
 import groupTherapyImg from '@/assets/group-therapy.jpg';
 import womensGameImg from '@/assets/womens-happiness-game-new.jpg';
+import transformationGameImg from '@/assets/transformation-game.jpg';
 
 const ServicesAndPricing = () => {
   const [visibleServices, setVisibleServices] = useState<Record<string, boolean>>({});
@@ -75,7 +76,7 @@ const ServicesAndPricing = () => {
         "теплой женской компании." +
         " (до 4 участниц)",
       color: "healing-green",
-      image: womensGameImg
+       image: transformationGameImg
     }
   ];
 
