@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { User, Users, Gamepad2, Clock } from 'lucide-react';
 import individualTherapyImg from '@/assets/individual-therapy.jpg';
 import groupTherapyImg from '@/assets/group-therapy.jpg';
-import womensGameImg from '@/assets/womens-happiness-game.jpg';
+import womensGameImg from '@/assets/womens-happiness-game-new.jpg';
 
 const ServicesAndPricing = () => {
   const [visibleServices, setVisibleServices] = useState<Record<string, boolean>>({});
