@@ -13,7 +13,7 @@ const Map = () => {
           
           <div className="rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.1!2d27.4685!3d53.8843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc5b2b2c8f65d%3A0x5c2b8b9a8b9a8b9a!2z0YPQuy4g0KPQsdC-0YDQtdCy0LjRh9CwIDk10JAsINCc0LjQvdGB0YA!5e0!3m2!1sru!2sby!4v1234567890123!5m2!1sru!2sby"
+              src="https://www.google.com/maps?q=53.8340373,27.6171677&z=16&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
