@@ -10,7 +10,6 @@ const Header = () => {
     { href: '#education', label: 'Образование' },
     { href: '#services', label: 'Стоимость' },
     { href: '#issues', label: 'Запросы' },
-    { href: '#testimonials', label: 'Отзывы' },
     { href: '#faq', label: 'Вопросы' },
     { href: '#contact', label: 'Контакты' },
   ];
