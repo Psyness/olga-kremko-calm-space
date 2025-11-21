@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   const menuItems = [
@@ -19,9 +20,22 @@ const Header = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (!isHomePage) {
+      // Если мы не на главной странице, сначала переходим на главную
+      navigate('/');
+      // Даем время на переход, затем скроллим
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Если уже на главной, просто скроллим
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -55,8 +69,6 @@ const Header = () => {
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
                   className="text-muted-foreground hover:text-primary smooth-transition text-sm font-medium"
-                  disabled={!isHomePage}
-                  style={{ opacity: !isHomePage ? 0.5 : 1 }}
                 >
                   {item.label}
                 </button>
@@ -105,8 +117,6 @@ const Header = () => {
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
                     className="text-left py-2 px-2 text-muted-foreground hover:text-primary hover:bg-accent/20 rounded-md smooth-transition"
-                    disabled={!isHomePage}
-                    style={{ opacity: !isHomePage ? 0.5 : 1 }}
                   >
                     {item.label}
                   </button>
