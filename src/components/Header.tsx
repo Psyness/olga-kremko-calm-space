@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const menuItems = [
-    { href: '#about', label: 'Обо мне' },
-    { href: '#education', label: 'Образование' },
-    { href: '#services', label: 'Стоимость' },
-    { href: '#issues', label: 'Запросы' },
-    { href: '#faq', label: 'Вопросы' },
-    { href: '#contact', label: 'Контакты' },
+    { href: '#about', label: 'Обо мне', type: 'anchor' },
+    { href: '#education', label: 'Образование', type: 'anchor' },
+    { href: '#services', label: 'Стоимость', type: 'anchor' },
+    { href: '#issues', label: 'Запросы', type: 'anchor' },
+    { href: '#faq', label: 'Вопросы', type: 'anchor' },
+    { href: '#contact', label: 'Контакты', type: 'anchor' },
+    { href: '/contract', label: 'Договор', type: 'link' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -38,13 +42,25 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary smooth-transition text-sm font-medium"
-              >
-                {item.label}
-              </button>
+              item.type === 'link' ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-primary smooth-transition text-sm font-medium"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-primary smooth-transition text-sm font-medium"
+                  disabled={!isHomePage}
+                  style={{ opacity: !isHomePage ? 0.5 : 1 }}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
 
@@ -75,13 +91,26 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-border/20">
             <nav className="flex flex-col space-y-3">
               {menuItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 px-2 text-muted-foreground hover:text-primary hover:bg-accent/20 rounded-md smooth-transition"
-                >
-                  {item.label}
-                </button>
+                item.type === 'link' ? (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-left py-2 px-2 text-muted-foreground hover:text-primary hover:bg-accent/20 rounded-md smooth-transition"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-left py-2 px-2 text-muted-foreground hover:text-primary hover:bg-accent/20 rounded-md smooth-transition"
+                    disabled={!isHomePage}
+                    style={{ opacity: !isHomePage ? 0.5 : 1 }}
+                  >
+                    {item.label}
+                  </button>
+                )
               ))}
                 <a 
                   href="tel:+375259688144" 
