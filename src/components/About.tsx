@@ -54,12 +54,12 @@ const About = () => {
           {/* Философия работы */}
           <Card className="healing-gradient border-0">
             <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-medium mb-4 text-primary-foreground">
+              <h3 className="text-2xl font-medium mb-4 text-foreground">
                 Моя философия
               </h3>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-2xl mx-auto">
-                "Я не даю готовых советов! Вместо этого я помогаю человеку разобраться в своих эмоциях,
-                потребностях и внутренних опорах, чтобы он мог самостоятельно принимать решения."
+              <p className="text-lg text-muted-foreground/90 leading-relaxed max-w-2xl mx-auto">
+                Я не даю готовых советов! Вместо этого я помогаю человеку разобраться в своих эмоциях,
+                потребностях и внутренних опорах, чтобы он мог самостоятельно принимать решения.
               </p>
             </CardContent>
           </Card>

@@ -135,10 +135,10 @@ const FAQ = () => {
             <Card className="healing-gradient border-0">
               <CardContent className="p-6 text-center">
                 <div className="text-primary-foreground">
-                  <h3 className="text-xl mb-3 text-primary-foreground">
+                  <h3 className="text-xl mb-3 text-foreground">
                     Готовы начать?
                   </h3>
-                  <p className="text-primary-foreground/90 mb-6 text-sm">
+                  <p className="text-muted-foreground/90 mb-6 text-sm">
                     Первый шаг самый важный — решившись на него, вы уже начинаете менять свою жизнь..
                   </p>
                   <Button 

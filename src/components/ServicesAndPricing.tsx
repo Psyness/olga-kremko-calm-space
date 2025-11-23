@@ -174,16 +174,16 @@ const ServicesAndPricing = () => {
           {/* Призыв к действию */}
           <Card className="healing-gradient border-0 text-center">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-medium mb-4 text-primary-foreground">
+              <h3 className="text-2xl font-medium mb-4 text-foreground">
                 Готовы начать путь к изменениям?
               </h3>
-              <p className="text-primary-foreground/90 mb-6 text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground/90 mb-6 text-lg max-w-2xl mx-auto">
                 Я буду рядом,
                 чтобы поддержать вас на этом важном пути к внутренней гармонии и благополучию.
               </p>
-              <Button 
+              <Button
                 onClick={scrollToContact}
-                variant="secondary" 
+                variant="secondary"
                 size="lg"
                 className="bg-card hover:bg-card/90 text-foreground"
               >

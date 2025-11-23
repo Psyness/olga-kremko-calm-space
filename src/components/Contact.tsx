@@ -9,10 +9,10 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Контакты */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-medium mb-6 text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6 text-foreground">
               Контакты
             </h2>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto">
               Свяжитесь со мной для записи на консультацию
             </p>
           </div>
