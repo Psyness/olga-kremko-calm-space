@@ -13,42 +13,48 @@ const Education = () => {
       title: "Высшее психологическое образование",
       institution: "МФПУ \"Синергия\" Квалификация \"Психолог\" ",
       description: "Факультет философии и социальных наук, специальность 'Психология'",
-      type: "diploma"
+      type: "diploma",
+      image: diplomasImage
     },
     {
       icon: GraduationCap,
       title: "Психологическое консультирование",
       institution: "Столичный институт профессионального образования",
       description: "Сертификат специалиста по психологическому консультированию",
-      type: "diploma"
+      type: "diploma",
+      image: diplomasImage
     },
     {
       icon: BookOpen,
       title: "Когнитивно-поведенческая терапия",
       institution: "Высшая Школа \"Среда Обучения\"",
       description: "Углубленный курс по методам когнитивно-поведенческой терапии",
-      type: "certificate"
+      type: "certificate",
+      image: diplomasImage
     },
     {
       icon: Award,
       title: "1 ступень Гештальт-терапии",
       institution: "Московский Гештальт Институт",
       description: "Специализация в работе с травматическими переживаниями",
-      type: "certificate"
+      type: "certificate",
+      image: diplomasImage
     },
     {
       icon: FileCheck,
       title: "Семейная психотерапия",
       institution: "СПбШТ Федеральный образовательный проект",
       description: "Методы работы с семейными и парными отношениями",
-      type: "certificate"
+      type: "certificate",
+      image: diplomasImage
     },
     {
       icon: BookOpen,
       title: "Психология отношений",
       institution: "СПбШТ Федеральный образовательный проект",
       description: "Сертификат ведущего групповой терапии и трансформационных игр",
-      type: "certificate"
+      type: "certificate",
+      image: diplomasImage
     }
   ];
 
@@ -111,7 +117,7 @@ const Education = () => {
                 <CardContent className="p-6">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                     <img
-                      src={diplomasImage}
+                      src={selectedIndex !== null ? education[selectedIndex].image : diplomasImage}
                       alt={selectedIndex !== null ? education[selectedIndex].title : "Дипломы и сертификаты психолога Кремко Ольги"}
                       className="w-full h-full object-cover"
                     />
