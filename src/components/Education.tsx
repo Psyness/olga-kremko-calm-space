@@ -119,6 +119,7 @@ const Education = () => {
                               src={item.image}
                               alt={item.title}
                               className="absolute inset-0 w-full h-full object-cover"
+                              loading="eager"
                             />
                           </div>
                           <div className="text-center">
@@ -139,9 +140,11 @@ const Education = () => {
                 <CardContent className="p-6">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                     <img
+                      key={selectedIndex ?? 'default'}
                       src={selectedIndex !== null ? education[selectedIndex].image : diplomasImage}
                       alt={selectedIndex !== null ? education[selectedIndex].title : "Дипломы и сертификаты психолога Кремко Ольги"}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                   </div>
                   <div className="text-center min-h-[80px] flex flex-col justify-center">
