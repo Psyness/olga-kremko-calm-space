@@ -82,37 +82,59 @@ const Education = () => {
             {/* Список образования */}
             <div className="grid gap-4">
               {education.map((item, index) => (
-                <Card 
-                  key={index} 
-                  className={`border-0 backdrop-blur-sm cursor-pointer transition-all duration-300 ${
-                    selectedIndex === index 
-                      ? 'bg-card/95 trust-shadow ring-2 ring-primary shadow-lg shadow-primary/20' 
-                      : 'bg-card/95 trust-shadow hover:bg-card/80'
-                  }`}
-                  onClick={() => setSelectedIndex(selectedIndex === index ? null : index)}
-                >
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 rounded-full bg-background flex items-center justify-center ${getIconColor(item.type)}`}>
-                          <item.icon size={16} />
+                <div key={item.title}>
+                  <Card 
+                    className={`border-0 backdrop-blur-sm cursor-pointer transition-all duration-300 ${
+                      selectedIndex === index 
+                        ? 'bg-card/95 trust-shadow ring-2 ring-primary shadow-lg shadow-primary/20' 
+                        : 'bg-card/95 trust-shadow hover:bg-card/80'
+                    }`}
+                    onClick={() => setSelectedIndex(selectedIndex === index ? null : index)}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-8 h-8 rounded-full bg-background flex items-center justify-center ${getIconColor(item.type)}`}>
+                            <item.icon size={16} />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-medium text-sm">{item.title}</h3>
+                            <p className="text-xs text-primary">{item.institution}</p>
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="font-medium text-sm">{item.title}</h3>
-                          <p className="text-xs text-primary">{item.institution}</p>
-                        </div>
+                        <Badge variant={getBadgeVariant(item.type)} className="text-xs">
+                          {item.type === 'diploma' ? 'Диплом' : 'Сертификат'}
+                        </Badge>
                       </div>
-                      <Badge variant={getBadgeVariant(item.type)} className="text-xs">
-                        {item.type === 'diploma' ? 'Диплом' : 'Сертификат'}
-                      </Badge>
+                    </CardContent>
+                  </Card>
+
+                  {selectedIndex === index && (
+                    <div className="lg:hidden mt-4 animate-in fade-in duration-300">
+                      <Card className="border-0 trust-shadow bg-card/95 backdrop-blur-sm overflow-hidden">
+                        <CardContent className="p-6">
+                          <div className="relative w-full rounded-lg overflow-hidden mb-4" style={{ paddingBottom: '75%' }}>
+                            <img
+                              key={`${index}-mobile`}
+                              src={item.image}
+                              alt={item.title}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h3 className="text-lg font-medium mb-2">{item.title}</h3>
+                            <p className="text-primary text-sm">{item.description}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
-                  </CardContent>
-                </Card>
+                  )}
+                </div>
               ))}
             </div>
 
-            {/* Изображение дипломов - карусель */}
-            <div className="relative">
+            {/* Изображение дипломов - карусель (только на больших экранах) */}
+            <div className="relative hidden lg:block">
               <Card className="border-0 trust-shadow bg-card/95 backdrop-blur-sm overflow-hidden transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">

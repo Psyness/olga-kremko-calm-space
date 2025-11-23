@@ -153,11 +153,15 @@ const ServicesAndPricing = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
-                    <div>
-                    {visibleServices[service.title] && ` ${service.fullDescription}`}
-                    </div>
-                    <div className="cursor-pointer text-primary underline underline-offset-2" onClick={() => toggleVisible(service.title)}>{visibleServices[service.title] ? 'Скрыть' : 'Подробнее'}</div>
                   </p>
+                  {visibleServices[service.title] && (
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {service.fullDescription}
+                    </p>
+                  )}
+                  <div className="cursor-pointer text-primary underline underline-offset-2 mb-6" onClick={() => toggleVisible(service.title)}>
+                    {visibleServices[service.title] ? 'Скрыть' : 'Подробнее'}
+                  </div>
                   
                   <Button 
                     onClick={scrollToContact}
