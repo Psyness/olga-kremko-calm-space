@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { GraduationCap, FileCheck, BookOpen, Award } from 'lucide-react';
 import diplomasImage from '@/assets/diplomas.jpg';
 
 const Education = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const education = [
     {
       icon: GraduationCap,
@@ -74,7 +76,15 @@ const Education = () => {
             {/* Список образования */}
             <div className="grid gap-4">
               {education.map((item, index) => (
-                <Card key={index} className="border-0 trust-shadow bg-card/95 backdrop-blur-sm">
+                <Card 
+                  key={index} 
+                  className={`border-0 backdrop-blur-sm cursor-pointer transition-all duration-300 ${
+                    selectedIndex === index 
+                      ? 'bg-card/95 trust-shadow ring-2 ring-primary shadow-lg shadow-primary/20' 
+                      : 'bg-card/95 trust-shadow hover:bg-card/80'
+                  }`}
+                  onClick={() => setSelectedIndex(selectedIndex === index ? null : index)}
+                >
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
@@ -97,21 +107,24 @@ const Education = () => {
 
             {/* Изображение дипломов - карусель */}
             <div className="relative">
-              <Card className="border-0 trust-shadow bg-card/95 backdrop-blur-sm overflow-hidden">
+              <Card className="border-0 trust-shadow bg-card/95 backdrop-blur-sm overflow-hidden transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                     <img
                       src={diplomasImage}
-                      alt="Дипломы и сертификаты психолога Кремко Ольги"
+                      alt={selectedIndex !== null ? education[selectedIndex].title : "Дипломы и сертификаты психолога Кремко Ольги"}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-medium mb-2">
-                      Документы об образовании
+                  <div className="text-center min-h-[80px] flex flex-col justify-center">
+                    <h3 className="text-lg font-medium mb-2 transition-all duration-300">
+                      {selectedIndex !== null ? education[selectedIndex].title : 'Документы об образовании'}
                     </h3>
-                    <p className="text-primary text-sm">
-                      Все дипломы и сертификаты подтверждают право на ведение психологической практики
+                    <p className="text-primary text-sm transition-all duration-300">
+                      {selectedIndex !== null 
+                        ? education[selectedIndex].description
+                        : 'Все дипломы и сертификаты подтверждают право на ведение психологической практики'
+                      }
                     </p>
                   </div>
                 </CardContent>
