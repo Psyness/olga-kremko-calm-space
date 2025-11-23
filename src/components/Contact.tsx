@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, MessageCircle, Instagram, Clock, MapPin } from 'lucide-react';
+import { Phone, MessageCircle, Instagram, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
