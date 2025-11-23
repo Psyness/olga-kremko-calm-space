@@ -82,9 +82,9 @@ const Education = () => {
             {/* Список образования */}
             <div className="grid gap-4">
               {education.map((item, index) => (
-                <div key={item.title}>
+                <div key={index}>
                   <Card 
-                    className={`border-0 backdrop-blur-sm cursor-pointer transition-all duration-300 ${
+                    className={`border-0 backdrop-blur-sm cursor-pointer ${
                       selectedIndex === index 
                         ? 'bg-card/95 trust-shadow ring-2 ring-primary shadow-lg shadow-primary/20' 
                         : 'bg-card/95 trust-shadow hover:bg-card/80'
@@ -110,7 +110,7 @@ const Education = () => {
                   </Card>
 
                   {selectedIndex === index && (
-                    <div className="lg:hidden mt-4 animate-in fade-in duration-300">
+                    <div className="lg:hidden mt-4 animate-in fade-in">
                       <Card className="border-0 trust-shadow bg-card/95 backdrop-blur-sm overflow-hidden">
                         <CardContent className="p-6">
                           <div className="relative w-full rounded-lg overflow-hidden mb-4" style={{ paddingBottom: '75%' }}>
