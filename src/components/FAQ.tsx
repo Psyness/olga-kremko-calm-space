@@ -135,7 +135,7 @@ const FAQ = () => {
             <Card className="healing-gradient border-0">
               <CardContent className="p-6 text-center">
                 <div className="text-primary-foreground">
-                  <h3 className="text-xl font-medium mb-3">
+                  <h3 className="text-xl mb-3 text-primary-foreground">
                     Готовы начать?
                   </h3>
                   <p className="text-primary-foreground/90 mb-6 text-sm">
