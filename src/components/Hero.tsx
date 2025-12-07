@@ -55,7 +55,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <div className="font-medium text-foreground">Конфиденциальность</div>
-                  <div className="text-sm text-muted-foreground">сохранение врачебной тайны</div>
+                  <div className="text-sm text-muted-foreground">гарантия сохранения личных данных</div>
                 </div>
               </div>
               

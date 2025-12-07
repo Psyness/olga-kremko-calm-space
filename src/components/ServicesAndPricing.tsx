@@ -183,7 +183,7 @@ const ServicesAndPricing = () => {
               </h3>
               <p className="text-muted-foreground/90 mb-6 text-lg max-w-2xl mx-auto">
                 Я буду рядом,
-                чтобы поддержать вас на этом важном пути к внутренней гармонии и благополучию.
+                чтобы поддержать вас на этом важном пути.
               </p>
               <Button
                 onClick={scrollToContact}
