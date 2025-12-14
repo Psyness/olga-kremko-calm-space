@@ -12,7 +12,7 @@ const Education = () => {
       icon: GraduationCap,
       title: "Высшее психологическое образование",
       institution: "МФПУ \"Синергия\" Квалификация \"Психолог\" ",
-      description: "Факультет философии и социальных наук, специальность 'Психология'",
+      description: "Бакалавриат. Специальность 'Психология'",
       type: "diploma",
       image: diplomasImage
     },
@@ -20,7 +20,7 @@ const Education = () => {
       icon: GraduationCap,
       title: "Психологическое консультирование",
       institution: "Столичный институт профессионального образования",
-      description: "Сертификат специалиста по психологическому консультированию",
+      description: "Психолог - консультант (680 часов)",
       type: "diploma",
       image: diplomasImage
     },
@@ -28,7 +28,7 @@ const Education = () => {
       icon: BookOpen,
       title: "Когнитивно-поведенческая терапия",
       institution: "Высшая Школа \"Среда Обучения\"",
-      description: "Углубленный курс по методам когнитивно-поведенческой терапии",
+      description: "Рационально-Эмотивно-Поведенческая терапия (250 часов)",
       type: "certificate",
       image: diplomasImage
     },
@@ -36,23 +36,23 @@ const Education = () => {
       icon: Award,
       title: "1 ступень Гештальт-терапии",
       institution: "Московский Гештальт Институт",
-      description: "Специализация в работе с травматическими переживаниями",
+      description: "Основы гештальт-терапии (180 часов)",
       type: "certificate",
       image: diplomasImage
     },
     {
       icon: FileCheck,
-      title: "Семейная психотерапия",
+      title: "Психология отношений",
       institution: "СПбШТ Федеральный образовательный проект",
-      description: "Методы работы с семейными и парными отношениями",
+      description: "Курс по психологии отношений",
       type: "certificate",
       image: diplomasImage
     },
     {
       icon: BookOpen,
-      title: "Психология отношений",
-      institution: "СПбШТ Федеральный образовательный проект",
-      description: "Сертификат ведущего групповой терапии и трансформационных игр",
+      title: "Интенсив \"Мастерство консультирования\"",
+      institution: "Прогрессивная школа психологии",
+      description: "\"Начало терапии\", \"Завершение терапии\" и\"Терапия без границ\"",
       type: "certificate",
       image: diplomasImage
     }

@@ -15,11 +15,11 @@ const Issues = () => {
           </div>
 
           {/* Запросы - компактный список с иконками */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="space-y-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <Cloud className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Депрессия, повышенная тревожность, панические атаки, внутреннее напряжение</p>
+                <p className="text-muted-foreground text-sm">Депрессия, повышенная тревожность, панические атаки</p>
               </div>
               <div className="flex items-start gap-2">
                 <Heart className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
@@ -27,7 +27,7 @@ const Issues = () => {
               </div>
               <div className="flex items-start gap-2">
                 <Zap className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Эмоциональное выгорание, хроническая усталость, апатия, негативные мысли</p>
+                <p className="text-muted-foreground text-sm">Эмоциональное выгорание, хроническая усталость</p>
               </div>
               <div className="flex items-start gap-2">
                 <Flame className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
@@ -35,10 +35,14 @@ const Issues = () => {
               </div>
               <div className="flex items-start gap-2">
                 <AlertCircle className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Длительный или острый стресс, переживание сложных жизненных ситуаций</p>
+                <p className="text-muted-foreground text-sm">Длительный или острый стресс</p>
+              </div>
+               <div className="flex items-start gap-2">
+                <Scale className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
+                <p className="text-muted-foreground text-sm">Работа с обидами, чувством вины и стыда</p>
               </div>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <HelpCircle className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
                 <p className="text-muted-foreground text-sm">Неуверенность в себе, заниженная самооценка</p>
@@ -49,37 +53,20 @@ const Issues = () => {
               </div>
               <div className="flex items-start gap-2">
                 <Users className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Трудности в отношениях с близкими людьми, родителями, коллегами, начальством</p>
+                <p className="text-muted-foreground text-sm">Трудности в отношениях с партнером, родителями, коллегами, начальством</p>
               </div>
-              <div className="flex items-start gap-2">
-                <HeartOff className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Проблемы в отношениях с партнером</p>
-              </div>
+
               <div className="flex items-start gap-2">
                 <Shield className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
                 <p className="text-muted-foreground text-sm">Неумение защищать свои границы и говорить «нет»</p>
               </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <Scale className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Работа с обидами, чувством вины и стыда</p>
-              </div>
-              <div className="flex items-start gap-2">
-                <PauseCircle className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Синдром отложенной жизни, неумение наслаждаться моментом здесь и сейчас</p>
-              </div>
-              <div className="flex items-start gap-2">
-                <RefreshCw className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Повторяющиеся сценарии в жизни и отношениях</p>
-              </div>
+
+
+
               <div className="flex items-start gap-2">
                 <GitFork className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
                 <p className="text-muted-foreground text-sm">Трудности в принятии решений</p>
-              </div>
-              <div className="flex items-start gap-2">
-                <Lightbulb className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">Желание лучше понимать себя и других</p>
+
               </div>
               <div className="flex items-start gap-2">
                 <Sparkles className="w-6 h-6 text-healing-green flex-shrink-0 mt-0.5" />
